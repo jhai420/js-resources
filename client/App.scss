@@ -1,0 +1,322 @@
+body {
+  background-color: black;
+  font-family: -apple-system,BlinkMacSystemFont,segoe ui,roboto,oxygen,ubuntu,cantarell,fira sans,droid sans,helvetica neue,sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 1.6;
+  color: #e6eaee;
+}
+
+span {
+  font-family: -apple-system,BlinkMacSystemFont,segoe ui,roboto,oxygen,ubuntu,cantarell,fira sans,droid sans,helvetica neue,sans-serif;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #89a;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  flex: 1;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-icon {
+  margin-right: 15px;
+  color: #89a;
+}
+
+.nav-icon a {
+  color: #89a;
+}
+
+.nav-icon a:hover {
+  color:rgb(202, 212, 223);
+}
+
+header:first-child {
+  margin-right: 30%;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+.categories {
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.resource-container {
+  border-radius: 15px;
+  padding: 15px 25px;
+  margin: 15px;
+  background-color: #1e2125;
+}
+
+
+
+.resources-display {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+label {
+  margin: 5px;
+  display: block;
+}
+
+.hidden-msg {
+  transition: 0.2s;
+  visibility: hidden;
+}
+
+.rating-label {
+  display: inline;
+}
+
+.circle {
+  display: inline;
+  padding: 8px;
+}
+
+.firstrow-categories {
+  margin-bottom: 15px;
+}
+
+input[type="image" i] {
+  width: 140px;
+  transition: transform .2s;
+}
+
+input[type="image" i]:hover {
+  transform: scale(1.1);
+}
+
+header h1 {
+  font-size: 4em;
+  line-height: 1.2;
+  color: #89a;
+  font-weight: 200;
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  margin-block-end: 0.1em;
+}
+
+ h1 a:hover{
+  color: rgb(202, 212, 223);
+ }
+
+ h2 {
+  font-size: 3em;
+  line-height: 1.2;
+  color: #89a;
+  font-weight: 200;
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+ }
+
+h3 {
+  margin-block-end: 0.5em;
+}
+
+h3 a {
+  font-family: -apple-system,BlinkMacSystemFont,segoe ui,roboto,oxygen,ubuntu,cantarell,fira sans,droid sans,helvetica neue,sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+  color: #bcccdc;
+  //color: #745fb5;
+  text-decoration: none;
+}
+
+h3 a:visited {
+  color: #bcccdc;
+}
+
+h3 a:hover {
+  color:#57CBAB;
+}
+
+.author {
+  margin-block-start: .5em;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.rating-txt {
+  margin-block-start: .25em;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.tag {
+  font-size: 10px;
+  color:#627D98;
+  background-color: #1e2c3c; /* Set the background color */
+  border-radius: 3px;     /* Add some roundness */
+  border: 1px #102A43 solid; /* Add a border */
+  padding: 2px 5px;
+  display: inline;
+  margin-right: 5px;
+}
+
+/*
+	Ratings Stars
+	(with as little code as possible)
+*/
+
+:root {
+  --star-size: 20px;
+  --star-color: #fff;
+  --star-background: #6e78e5;
+}
+
+.Stars {
+  --percent: calc(var(--rating) / 5 * 100%);
+  
+  display: inline-flex;
+  font-size: var(--star-size);
+  font-family: Times; // make sure ★ appears correctly
+  line-height: 1;
+  
+  &::before {
+    content: '●●●●●';
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  margin-bottom: 5px;
+  justify-content: center;
+}
+
+/****** MODAL CSS *******/
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-main {
+  position:fixed;
+  background: #0b0f13;
+  width: 45%;
+  height: auto;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  padding: 10px 40px;
+  border:#1e2c3c 1px solid;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.close-icon {
+  position: absolute;
+  right: 0px;
+  top: 10px;
+}
+
+/****** SUBMISSION FORM CSS *******/
+
+.modal-main input[type=text] {
+  width: 95%;
+}
+
+.modal-main input, select {
+  background-color: #1c222e;
+  border: none;
+  color: white;
+  padding: 10px;
+}
+
+.modal-main label {
+  font-family: -apple-system,BlinkMacSystemFont,segoe ui,roboto,oxygen,ubuntu,cantarell,fira sans,droid sans,helvetica neue,sans-serif;
+  color: #bec0c2;
+}
+
+button {
+  background-color: transparent;
+  text-indent: 0px;
+  text-shadow: none;
+  border:none;
+}
+
+
+.btn-grad {background-image: linear-gradient(to right, #16222A 0%, #3A6073  51%, #16222A  100%)}
+.btn-grad {
+   margin-top: 20px;
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   //box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: inline;
+ }
+
+ .btn-grad:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+
+ .btns-inline {
+   display: flex;
+ }
+
+ .btn-gray {
+   margin-left: 10px;
+   background-color: #1c232f;
+    margin-top: 20px;
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: #bec0c2;            
+   //box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: inline;
+ }
+
+ .btn-gray:hover {
+   background-color: #141a24;
+ }
+

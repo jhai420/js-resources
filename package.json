@@ -1,0 +1,43 @@
+{
+  "name": "solo-project",
+  "version": "1.0.0",
+  "description": "Compilation of Codesmith's favorite JS resources",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server/server.js",
+    "dev": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "Jenny Hai",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/plugin-transform-runtime": "^7.12.15",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "css-loader": "^1.0.0",
+    "sass": "^1.32.6",
+    "sass-loader": "^7.3.1",
+    "source-map-loader": "^2.0.1",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.15",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
+  }
+}
