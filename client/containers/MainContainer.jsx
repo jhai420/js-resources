@@ -12,11 +12,13 @@ class MainContainer extends Component {
       resources: [],
       filteredResources: [],
       show: false,
+      category: 'All Categories',
     }
 
     this.filterCategory = this.filterCategory.bind(this);
     this.showModal = this.showModal.bind(this);
     this.hideModal = this.hideModal.bind(this);
+    this.fetchResources = this.fetchResources.bind(this);
   }
 
   showModal() {
@@ -49,39 +51,51 @@ class MainContainer extends Component {
   }
 
   filterCategory(e) {
-    const category = e.target.id
+    let category = e.target.id
 
     this.setState((state) => {
       state.filteredResources = state.resources.slice();
       let newResources = state.filteredResources.filter(resource => resource.category === category)
+      category = category === 'OOP' ? 'Object-Oriented Programming': category;
+      category = category === 'DOM' ? 'DOM Manipulation': category;
       return { 
+        ...state,
         resources: state.resources,
-        filteredResources: newResources 
+        filteredResources: newResources,
+        category: category === 'OOP' ? 'Object-Oriented Programming': category,
       }
     })
   }
 
   componentDidMount() {
+    this.fetchResources();
+  }
+
+  fetchResources() {
     fetch('/api/resource')
     .then((data) => data.json())
     .then((data) => data.data.sort((a, b) => b.rating - a.rating))
-    .then((resources) => this.setState({ 
-      resources,
-      filteredResources: resources,
+    .then((resources) => this.setState((state) => { 
+      return {
+        ...state,
+        resources,
+        filteredResources: resources,
+        category: 'All Categories',
+      }
      }))
   }
     
   render() {
-    const { filteredResources } = this.state
+    const { category, show, filteredResources } = this.state
     //<ResourceInsert hideModal={this.hideModal}/>
     return(
       <div className="container">
-        <Header showModal={this.showModal} show={this.state.show}/>
-        <ResourceInsert show={this.state.show} handleClose={this.hideModal} >
+        <Header showModal={this.showModal} show={show}/>
+        <ResourceInsert fetchResources={this.fetchResources} show={show} handleClose={this.hideModal} >
         <p></p>        
         </ResourceInsert>
         <CategoriesDisplay filterCategory={this.filterCategory}/>
-        <ResourcesDisplay resources={filteredResources} />
+        <ResourcesDisplay category={category} resources={filteredResources} />
       </div>
     )
   }

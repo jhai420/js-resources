@@ -4,10 +4,10 @@ import "./App.scss";
 import MainContainer from './containers/MainContainer';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { faPlus, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faTimesCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 
 
-library.add(fab, faPlus, faTimesCircle)
+library.add(fab, faPlus, faTimesCircle, faPlusCircle)
 
 class App extends Component {
   render() {

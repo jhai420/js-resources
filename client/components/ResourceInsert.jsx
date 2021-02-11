@@ -35,7 +35,7 @@ class ResourceInsert extends Component {
     e.preventDefault();
     
     for (let field in this.state) {
-      if (!this.state[field]) return alert('Missing fields!');
+      if (this.state[field] === '') return alert('Missing fields!');
     }
     const { name, type, author, description, link, category, rating, tags } = this.state;
     const tagArray = tags.split(' ');
@@ -55,14 +55,15 @@ class ResourceInsert extends Component {
         document.getElementById('success-msg').classList.remove('hidden-msg');
         this.setState({
           name: '',
-          type: '',
+          type: 'blank',
           author: '',
           description: '',
           link: '',
-          category: '',
+          category: 'blank',
           rating: '',
           tags: '',
         })
+        this.props.fetchResources();
       })
   }
 
@@ -83,7 +84,7 @@ class ResourceInsert extends Component {
           <label>Title:</label>
             <input type="text" name="name" value={this.state.name} onChange={this.handleChange}></input>
           <label>Type:</label>
-            <select id="type" name="type" onChange={this.handleChange}>
+            <select id="type" name="type" value={this.state.type} onChange={this.handleChange}>
               <option value="blank"> </option>
               <option value="Article">Article</option>
               <option value="Video">Video</option>
@@ -100,7 +101,7 @@ class ResourceInsert extends Component {
           <label>Link:</label>
             <input type="text" name="link" value={this.state.link} onChange={this.handleChange}></input>
           <label>Category:</label>
-            <select id="category" name="category" onChange={this.handleChange}>
+            <select id="category" name="category" value={this.state.category} onChange={this.handleChange}>
               <option value="blank"> </option>
               <option value="Vanilla JS">Vanilla JS</option>
               <option value="DOM">DOM Manipulation</option>

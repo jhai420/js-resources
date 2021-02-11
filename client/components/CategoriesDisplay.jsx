@@ -4,6 +4,7 @@ class Categories extends Component {
 
   render() {
     return(
+      <>
       <div className="categories">
         <div className="firstrow-categories">
           <div className="circle"><input type="image" id="Vanilla JS" onClick={this.props.filterCategory} src="../assets/images/vanillajs.png" /></div>
@@ -20,6 +21,7 @@ class Categories extends Component {
           <div className="circle"><input type="image" id="Environment" onClick={this.props.filterCategory} src="../assets/images/env.png" /></div>
         </div>
       </div>
+      </>
     )
   }
 }

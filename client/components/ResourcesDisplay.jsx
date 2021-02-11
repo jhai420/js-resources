@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import Resource from './Resource';
 
 class ResourcesDisplay extends Component {
-  constructor (props) {
-    super(props)
-  }
-
+  
   render() {
-    const { resources } = this.props;
+    const { category, resources } = this.props;
+
     const resourceBoxes = resources.map((resource, index) => {
       return <Resource 
         key={`Resource${index}`}
@@ -21,11 +19,17 @@ class ResourcesDisplay extends Component {
         tags={resource.tag}
       />
     })
-
     return(
-      <div className="resources-display">
-        { resourceBoxes }
-      </div>
+      <>
+        <h2 className="category">{category}</h2>
+        <div className="dots-divider">
+        <span className="dots"></span>
+        </div>
+        <div className="resources-display">
+          { resourceBoxes }
+        </div>
+      </>
+
     )
   }
 }

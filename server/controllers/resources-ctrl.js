@@ -55,6 +55,7 @@ resourceCtrl.updateResource = (req, res) => {
       return res.status(400).json({ success: false, error: `Error from updateResource controller: ${err}` }) 
     }
     resource.name = body.name;
+    resource.author = body.author;
     resource.type = body.type;
     resource.description = body.description;
     resource.link = body.link;

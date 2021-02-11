@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const resourcesSchema = new Schema({
   name: { type: String, required: true },
+  author: { type: String, required: true },
   type: { type: String, required: true },
   description: { type: String, required: true },
   link: { type: String, required: true },
