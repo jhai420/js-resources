@@ -1,4 +1,4 @@
-#JS. Resources
+# JS. Resources
 
 Database to share and rate your top JavaScript learning resources
 
